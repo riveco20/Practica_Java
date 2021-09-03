@@ -26,5 +26,22 @@ public class Electrodomestico {
         this.procedencia = procedencia;
     }
 
+    public double precioComsumo(char comsumo){
+        this.comsumo=comsumo;
+        double precio=0;
+            switch (this.comsumo){
+            case 'A':precio=450.000;
+                     break;
+            case 'B':precio=350.000;
+                     break;
+            case 'C':precio=250.000;
+                     break;
+            default :
+                System.out.println("No se tiene informacion para este consumo");
+                System.out.printf("Seleciones A, B o C");
+            }
+
+        return precio;
+    }
 
 }
