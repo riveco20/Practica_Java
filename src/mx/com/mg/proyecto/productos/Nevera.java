@@ -6,23 +6,29 @@ import java.util.ArrayList;
 
 public class Nevera extends Electrodomestico {
     public int capacidad;
-    public boolean sintonizadorTDT;
     public ArrayList<Double> precios;
 
-    public Nevera(char comsumo, String procedencia, int capacidad, boolean sintonizadorTDT) {
+    public Nevera(char comsumo, String procedencia, int capacidad) {
         super(comsumo, procedencia);
         this.capacidad = capacidad;
-        this.sintonizadorTDT = sintonizadorTDT;
     }
 
     public void precioNevera() {
         double precio = 0;
-        if (this.sintonizadorTDT == true) {
-            if (this.capacidad > 120) {
-                int capacidaDeMas = this.capacidad - 120;
-
-            }
-
+        double precioFinal = 0;
+        if (this.capacidad > 120) {
+            int capacidaDeMas = this.capacidad - 120;
+            precio = this.precioInicial();
+            precioFinal = precio + ((precio * 0.05) * capacidaDeMas);
+        } else {
+            precio = this.precioInicial();
         }
+    }
+
+    public double precioInicial(){
+        double precioComsumo=this.precioComsumo();
+        double precioProcedencia=this.precioProcedencia();
+        double precio = precioComsumo +precioComsumo;
+        return precio;
     }
 }
