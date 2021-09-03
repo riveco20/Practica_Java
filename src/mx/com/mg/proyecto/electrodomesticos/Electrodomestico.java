@@ -53,4 +53,12 @@ public class Electrodomestico {
         }
         return precio;
     }
+
+
+    public double precioInicial(){
+        double precioComsumo=this.precioComsumo();
+        double precioProcedencia=this.precioProcedencia();
+        double precio = precioComsumo +precioComsumo;
+        return precio;
+    }
 }
