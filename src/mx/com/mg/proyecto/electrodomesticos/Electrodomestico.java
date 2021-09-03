@@ -4,9 +4,7 @@ public class Electrodomestico {
     protected char comsumo;
     protected String procedencia;
 
-    public Electrodomestico(char comsumo, String procedencia){
-        this.comsumo=comsumo;
-        this.procedencia=procedencia;
+    public Electrodomestico(){
 
     }
 
@@ -26,8 +24,9 @@ public class Electrodomestico {
         this.procedencia = procedencia;
     }
 
-    public double precioComsumo(){
+    public double precioComsumo(char comsumo){
             double precio=0;
+            this.comsumo=comsumo;
             switch (this.comsumo){
             case 'A':precio=450000;
                      break;
@@ -43,23 +42,31 @@ public class Electrodomestico {
         return precio;
     }
 
-    public double precioProcedencia(){
+    public double precioProcedencia(String procedencia){
           double precio=0;
+          this.procedencia=procedencia;
         if(this.procedencia.equalsIgnoreCase("Nacional")){
             precio=250000;
         }
-        if (this.procedencia.equalsIgnoreCase("Importado")){
+        else if (this.procedencia.equalsIgnoreCase("Importado")){
             precio=350000;
         }
         return precio;
     }
 
 
-    public double precioInicial(){
-        double precioComsumo=this.precioComsumo();
-        double precioProcedencia=this.precioProcedencia();
+    public double precioInicial(char comsumo, String procedencia){
+        double precioComsumo=this.precioComsumo(comsumo);
+        double precioProcedencia=this.precioProcedencia(procedencia);
         double precio = precioComsumo +precioProcedencia;
         return precio;
+
+    }
+
+    public void factura(int contadorNevera, int contadorTv, double precioTotalNevera, double precioTotalTv, int totalElectrodomesticos, double precioTatalDelDia){
+        System.out.println("Factura Electronica" + "\n" + "Total de neveras: " + contadorNevera + " Precio total " + precioTotalNevera
+                +"\n" + "Total de tv: " + contadorTv + " precio total "
+                + precioTotalTv + "\n" + "Total electrodomesticos " + totalElectrodomesticos + " Precio Total dia: " + precioTatalDelDia);
 
     }
 }

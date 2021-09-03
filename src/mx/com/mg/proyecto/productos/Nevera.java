@@ -1,41 +1,48 @@
 package mx.com.mg.proyecto.productos;
 
 import mx.com.mg.proyecto.electrodomesticos.*;
-import java.util.ArrayList;
 
+import javax.xml.transform.Source;
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Nevera extends Electrodomestico {
     public int capacidad;
     public ArrayList<Double> precios = new ArrayList<Double>();
+    public Scanner consola=new Scanner(System.in);
+    public Nevera() {
+           }
 
-    public Nevera(char comsumo, String procedencia, int capacidad) {
-        super(comsumo, procedencia);
-        this.capacidad = capacidad;
-    }
-
-    public void precioNevera() {
+    public double precioNevera(char comsumo, String procedencia, int litros) {
         double precio = 0;
         double precioFinal = 0;
-        if(this.capacidad>0) {
+        this.capacidad=litros;
+        if (this.capacidad > 0) {
             if (this.capacidad > 120) {
                 int capacidaDeMas = this.capacidad - 120;
-                precio = this.precioInicial();
+                precio = this.precioInicial(comsumo, procedencia);
+                System.out.println(precio);
                 precioFinal = precio + ((precio * 0.05) * capacidaDeMas);
 
             } else {
-                precioFinal = this.precioInicial();
+                precioFinal = this.precioInicial(comsumo,procedencia);
 
             }
-             }
-        else {
+        } else {
             System.out.println("La capacidad no puede ser negatica");
-        }    }
-
-    public void totalNevera(){
-        int totalVenta=this.precios.size();
-        System.out.println(totalVenta);
+        }
+        return (precioFinal);
     }
 
-
-
+    public double administradoNevera(){
+        Scanner consola2= new Scanner(System.in);
+        System.out.println("Ingrese la procedenica");
+        String procencia = consola2.nextLine();
+        System.out.printf("Ingrese los litros"+"\n:");
+        int litros=this.consola.nextInt();
+        System.out.printf("Ingrese el comsumo" + "\n:");
+        char comsumo = this.consola.next().charAt(0);
+        double precio=this.precioNevera(comsumo,procencia,litros);
+        return precio;
+    }
 
 }
