@@ -45,6 +45,7 @@ public class Televisor extends Electrodomestico {
                 precioFinal=precioInicial(comsumo,procedencia);
             }
         }
+
          return (precioFinal);
     }
 

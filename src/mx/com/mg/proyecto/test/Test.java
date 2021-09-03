@@ -1,17 +1,14 @@
 package mx.com.mg.proyecto.test;
 
 import mx.com.mg.proyecto.electrodomesticos.Electrodomestico;
-import mx.com.mg.proyecto.productos.Nevera;
-import mx.com.mg.proyecto.productos.Televisor;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
+        Factura fatura = new Factura();
         Scanner consola = new Scanner(System.in);
-        Nevera nevera = new Nevera();
-        Televisor televisor = new Televisor();
         ArrayList<Double>preciosNevera= new ArrayList<Double>();
         ArrayList<Double>preciosTv = new ArrayList<Double>();
         int opcion = -1;
@@ -24,14 +21,13 @@ public class Test {
                 Scanner consola2 = new Scanner(System.in);
                 switch (opcion2) {
                     case 1:
-                        double precio = nevera.administradoNevera();
+                        double precio = fatura.compraNevera();
                         System.out.println(precio);
                         preciosNevera.add(precio);
                         break;
                     case 2:
-                        double precioTv = televisor.admistradoTv();
-                        System.out.println(precioTv);
-                        System.out.println("Venta tv");
+                        double precioTv =fatura.compraTv();
+                        System.out.println("precio: " + precioTv);
                         preciosTv.add(precioTv);
                         break;
                     default:
