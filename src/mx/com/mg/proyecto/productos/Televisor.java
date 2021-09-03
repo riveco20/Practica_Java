@@ -16,7 +16,7 @@ public class Televisor extends Electrodomestico {
         this.sincronizacionTDT = sincronizacionTDT;
     }
 
-    public void precioTv(){
+    public double precioTv(){
         double precio=0;
         double precioFinal=0;
         double valorAumentado=0;
@@ -44,6 +44,7 @@ public class Televisor extends Electrodomestico {
                 precioFinal=precioInicial();
             }
         }
+        return precioFinal;
     }
 
 
