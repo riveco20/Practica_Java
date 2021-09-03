@@ -44,4 +44,15 @@ public class Electrodomestico {
         return precio;
     }
 
+    public double precioProcedencia(String procedencia){
+        this.procedencia=procedencia;
+        double precio=0;
+        if(this.procedencia.equalsIgnoreCase("Nacional")){
+            precio=250.000;
+        }
+        if (this.procedencia.equalsIgnoreCase("Importado")){
+            precio=350.000;
+        }
+        return precio;
+    }
 }
