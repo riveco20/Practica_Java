@@ -26,14 +26,14 @@ public class Electrodomestico {
         this.procedencia = procedencia;
     }
 
-    protected double precioComsumo(){
+    public double precioComsumo(){
             double precio=0;
             switch (this.comsumo){
-            case 'A':precio=450.000;
+            case 'A':precio=450000;
                      break;
-            case 'B':precio=350.000;
+            case 'B':precio=350000;
                      break;
-            case 'C':precio=250.000;
+            case 'C':precio=250000;
                      break;
             default :
                 System.out.println("No se tiene informacion para este consumo");
@@ -43,13 +43,13 @@ public class Electrodomestico {
         return precio;
     }
 
-    protected double precioProcedencia(){
+    public double precioProcedencia(){
           double precio=0;
         if(this.procedencia.equalsIgnoreCase("Nacional")){
-            precio=250.000;
+            precio=250000;
         }
         if (this.procedencia.equalsIgnoreCase("Importado")){
-            precio=350.000;
+            precio=350000;
         }
         return precio;
     }
@@ -58,7 +58,8 @@ public class Electrodomestico {
     public double precioInicial(){
         double precioComsumo=this.precioComsumo();
         double precioProcedencia=this.precioProcedencia();
-        double precio = precioComsumo +precioComsumo;
+        double precio = precioComsumo +precioProcedencia;
         return precio;
+
     }
 }

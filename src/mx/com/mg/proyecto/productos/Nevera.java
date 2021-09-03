@@ -1,12 +1,12 @@
 package mx.com.mg.proyecto.productos;
 
-import mx.com.mg.proyecto.electrodomesticos.Electrodomestico;
+import mx.com.mg.proyecto.electrodomesticos.*;
 
 import java.util.ArrayList;
 
 public class Nevera extends Electrodomestico {
     public int capacidad;
-    public ArrayList<Double> precios;
+    public ArrayList<Double> precios = new ArrayList<Double>();
 
     public Nevera(char comsumo, String procedencia, int capacidad) {
         super(comsumo, procedencia);
@@ -16,12 +16,18 @@ public class Nevera extends Electrodomestico {
     public void precioNevera() {
         double precio = 0;
         double precioFinal = 0;
-        if (this.capacidad > 120) {
-            int capacidaDeMas = this.capacidad - 120;
-            precio = this.precioInicial();
-            precioFinal = precio + ((precio * 0.05) * capacidaDeMas);
-        } else {
-            precio = this.precioInicial();
+        if(this.capacidad>0) {
+            if (this.capacidad > 120) {
+                int capacidaDeMas = this.capacidad - 120;
+                precio = this.precioInicial();
+                precioFinal = precio + ((precio * 0.05) * capacidaDeMas);
+            } else {
+                precioFinal = this.precioInicial();
+            }
+            System.out.println(precioFinal);
+        }
+        else {
+            System.out.println("La capacidad no puede ser negatica");
         }
     }
 

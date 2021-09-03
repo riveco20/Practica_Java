@@ -17,9 +17,31 @@ public class Televisor extends Electrodomestico {
     }
 
     public void precioTv(){
+        double precio=0;
+        double precioFinal=0;
+        double valorAumentado=0;
         if(this.sincronizacionTDT==true){
-            if(this.tamaño>42){
+            if(this.tamaño>40){
+                precio=this.precioInicial();
+                valorAumentado=(precio*0.30)+250000;
+                precioFinal=precio+valorAumentado;
+            }
 
+            else {
+                precioFinal=precioInicial();
+            }
+
+        }
+
+        else {
+            if(this.tamaño>40){
+                precio=this.precioInicial();
+                valorAumentado=(precio*0.30);
+                precioFinal=precio+valorAumentado;
+
+            }
+            else {
+                precioFinal=precioInicial();
             }
         }
     }
