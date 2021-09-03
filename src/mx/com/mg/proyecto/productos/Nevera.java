@@ -20,7 +20,6 @@ public class Nevera extends Electrodomestico {
             if (this.capacidad > 120) {
                 int capacidaDeMas = this.capacidad - 120;
                 precio = this.precioInicial(comsumo, procedencia);
-                System.out.println(precio);
                 precioFinal = precio + ((precio * 0.05) * capacidaDeMas);
 
             } else {
