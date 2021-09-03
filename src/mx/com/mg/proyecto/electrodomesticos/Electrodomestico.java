@@ -26,9 +26,8 @@ public class Electrodomestico {
         this.procedencia = procedencia;
     }
 
-    public double precioComsumo(char comsumo){
-        this.comsumo=comsumo;
-        double precio=0;
+    protected double precioComsumo(){
+            double precio=0;
             switch (this.comsumo){
             case 'A':precio=450.000;
                      break;
@@ -44,9 +43,8 @@ public class Electrodomestico {
         return precio;
     }
 
-    public double precioProcedencia(String procedencia){
-        this.procedencia=procedencia;
-        double precio=0;
+    protected double precioProcedencia(){
+          double precio=0;
         if(this.procedencia.equalsIgnoreCase("Nacional")){
             precio=250.000;
         }
