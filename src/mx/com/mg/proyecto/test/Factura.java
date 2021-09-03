@@ -8,20 +8,20 @@ import java.util.ArrayList;
 
 public class Factura {
     public Nevera nevera = new Nevera();
-    public Televisor televisor= new Televisor();
+    public Televisor televisor = new Televisor();
     Electrodomestico electro = new Electrodomestico();
 
-    public Factura(){
+    public Factura() {
 
     }
 
-    public double compraNevera(){
+    public double compraNevera() {
         double precio = this.nevera.administradoNevera();
         System.out.println(precio);
         return precio;
     }
 
-    public double compraTv(){
+    public double compraTv() {
 
         double precio = this.televisor.admistradoTv();
         System.out.println(precio);
@@ -29,24 +29,24 @@ public class Factura {
         return precio;
     }
 
-    public void facturaFinal(ArrayList<Double> nevera, ArrayList<Double> tv){
-        int cantidaNevera=0;
-        int cantidaTv=0;
-        double precioTotalNevera=0;
-        double precioTotalTv=0;
-        for(int i =0; i<nevera.size();i++){
-            cantidaNevera+=1;
-            precioTotalNevera+=nevera.get(i);
+    public void facturaFinal(ArrayList<Double> nevera, ArrayList<Double> tv) {
+        int cantidaNevera = 0;
+        int cantidaTv = 0;
+        double precioTotalNevera = 0;
+        double precioTotalTv = 0;
+        for (int i = 0; i < nevera.size(); i++) {
+            cantidaNevera += 1;
+            precioTotalNevera += nevera.get(i);
         }
-        for (int j =0; j<tv.size();j++){
-            cantidaTv+=1;
-            precioTotalTv+=tv.get(j);
+        for (int j = 0; j < tv.size(); j++) {
+            cantidaTv += 1;
+            precioTotalTv += tv.get(j);
         }
 
-        double precioTotalDia=precioTotalNevera+precioTotalTv;
-        int totalElectrodomesticos=cantidaTv+cantidaNevera;
+        double precioTotalDia = precioTotalNevera + precioTotalTv;
+        int totalElectrodomesticos = cantidaTv + cantidaNevera;
 
-       this.electro.factura(cantidaNevera,cantidaTv,precioTotalNevera,precioTotalTv,totalElectrodomesticos,precioTotalDia);
+        this.electro.factura(cantidaNevera, cantidaTv, precioTotalNevera, precioTotalTv, totalElectrodomesticos, precioTotalDia);
     }
 
 }

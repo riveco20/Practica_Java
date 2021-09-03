@@ -2,6 +2,7 @@ package mx.com.mg.proyecto.test;
 
 import mx.com.mg.proyecto.electrodomesticos.Electrodomestico;
 import mx.com.mg.proyecto.test.Factura;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,8 +10,8 @@ public class Test {
     public static void main(String[] args) {
         Factura fatura = new Factura();
         Scanner consola = new Scanner(System.in);
-        ArrayList<Double>preciosNevera= new ArrayList<Double>();
-        ArrayList<Double>preciosTv = new ArrayList<Double>();
+        ArrayList<Double> preciosNevera = new ArrayList<Double>();
+        ArrayList<Double> preciosTv = new ArrayList<Double>();
         int opcion = -1;
         while (opcion != 0) {
             try {
@@ -39,7 +40,7 @@ public class Test {
             }
         }
 
-        fatura.facturaFinal(preciosNevera,preciosTv);
-        }
+        fatura.facturaFinal(preciosNevera, preciosTv);
+    }
 
 }
